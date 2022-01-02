@@ -23,6 +23,7 @@
 	},
 
 	// Add the IDs of extensions you want installed when the container is created.
+	// These are the suggested base extensions for VScode Jupyter
 	"extensions": [
 		"ms-python.python",
 		"ms-toolsai.jupyter",
