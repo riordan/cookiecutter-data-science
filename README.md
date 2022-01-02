@@ -1,44 +1,67 @@
-# Cookiecutter Data Science
+# Cookiecutter Data Science: Dockerized VSCode Edition
 
-_A logical, reasonably standardized, but flexible project structure for doing and sharing data science work._
+_A logical, reasonably standardized, but flexible project structure for doing, collaborating on, and sharing data science work._
+
+Derived from [Cookiecutter Data Science](http://drivendata.github.io/cookiecutter-data-science/)
 
 
-#### [Project homepage](http://drivendata.github.io/cookiecutter-data-science/)
+## Installation
 
+_Note: This was developed with the expectation of being used on Mac OS, though it should work just fine on other environments (with slightly different instructions)._
 
-### Requirements to use the cookiecutter template:
------------
- - Python 2.7 or 3.5+
- - [Cookiecutter Python package](http://cookiecutter.readthedocs.org/en/latest/installation.html) >= 1.4.0: This can be installed with pip by or conda depending on how you manage your Python packages:
+This template relies on the following tools:
+- python
+- [pipx](https://pypa.github.io/pipx/)
+- cookiecutter
+- [Docker](https://docs.docker.com/get-docker/)
+- Visual Studio Code
 
-``` bash
-$ pip install cookiecutter
+Additionally, [Homebrew](https://brew.sh) will be used to install and configure all the other tools we'll be using. Feel free to skip any you already have installed.
+
+### Prerequisite Configuration (Mac)
+
+**0. Install [Homebrew](http://brew.sh)**
+
+```bash
+$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-or
-
-``` bash
-$ conda config --add channels conda-forge
-$ conda install cookiecutter
+**1. Install Docker**
+Docker allows us to run a virtualized environment for local development. It's a computer inside your computer.
+```bash
+$ brew install --cask docker
 ```
 
+**2. Install VSCode**
+Visual Studio Code (aka `vscode`) is a modern, open-source text editor from Microsoft(‽). Through its extensive plug-ins, it also makes for a powerful environment for collaborative Jupyter notebook development.
+```bash
+$ brew install --cask visual-studio-code
+```
+
+
+**3. Install pipx**
+[pipx](https://pypa.github.io/pipx/) creates isolated python environments for Python-based CLI tools. It makes it harder to break standalone tools that rely on Python, even if your main developer environment goes haywire.
+
+```bash
+$ brew install pipx
+```
+
+**4. Use pipx to install Cookiecutter**
+[Cookiecutter](https://cookiecutter.readthedocs.io) is a Python CLI tool used to create standard project templates. We use it to scaffold our data science project.
+
+```bash
+$ pipx install cookiecutter
+```
+
+*phew: you're done with pre-setup*
 
 ### To start a new project, run:
 ------------
 
-    cookiecutter -c v1 https://github.com/drivendata/cookiecutter-data-science
+    cookiecutter -c vscode https://github.com/riordan/cookiecutter-data-science
 
 
 [![asciicast](https://asciinema.org/a/244658.svg)](https://asciinema.org/a/244658)
-
-### New version of Cookiecutter Data Science
-------------
-Cookiecutter data science is moving to v2 soon, which will entail using
-the command `ccds ...` rather than `cookiecutter ...`. The cookiecutter command
-will continue to work, and this version of the template will still be available.
-To use the legacy template, you will need to explicitly use `-c v1` to select it.
-Please update any scripts/automation you have to append the `-c v1` option (as above),
-which is available now.
 
 
 ### The resulting directory structure
