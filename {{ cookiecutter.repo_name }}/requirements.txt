@@ -1,7 +1,13 @@
 # external requirements
-click
-Sphinx
-coverage
-awscli
+pyarrow
+google-cloud-bigquery
+google-cloud-bigquery-storage
+pandas-gbq
+statsmodels
+papermill
+pydata-google-auth
+black
+nbblack
 flake8
+tqdm
 python-dotenv>=0.5.1
