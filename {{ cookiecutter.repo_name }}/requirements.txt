@@ -1,13 +1,19 @@
 # external requirements
-pyarrow
-google-cloud-bigquery
-google-cloud-bigquery-storage
-pandas-gbq
-statsmodels
-papermill
-pydata-google-auth
-black
-nbblack
-flake8
-tqdm
-python-dotenv>=0.5.1
+# uncomment to install package
+
+# statsmodels
+# papermill
+# tqdm
+# textblob
+# python-Levenshtein
+# python-dotenv>=0.5.1
+# datashader
+# bohkeh
+# orderedmultidict
+# mpld3
+# arrow
+# delorean
+# altair
+# sklearn-pandas
+# fuzzywuzzy
+# mlflow

@@ -22,8 +22,23 @@ RUN apt-get update \
  && apt-get clean -y && rm -rf /var/lib/apt/lists/* /tmp/library-scripts
  USER ${NB_UID}
 
+ RUN pip install --quiet --no-cache-dir && \
+     pyarrow && \
+     google-cloud-bigquery && \
+     google-cloud-bigquery-storage && \
+     google-cloud-storage && \
+     pandas-gbq && \
+     pydata-google-auth && \
+     black && \
+     flake8 && \
+     pandas-profiling && \
+     pytest && \
+     fix-permissions "${CONDA_DIR}" && \
+     fix-permissions "/home/${NB_USER}"
+
+
 COPY --chown=${NB_UID}:${NB_GID} requirements.txt /tmp/
 RUN pip install --quiet --no-cache-dir --requirement /tmp/requirements.txt && \
-    pip install --quiet --no-cache-dir pystan<3.0 && pip install --quiet --no-cache-dir prophet && \
+#    pip install --quiet --no-cache-dir pystan<3.0 && pip install --quiet --no-cache-dir prophet && \
     fix-permissions "${CONDA_DIR}" && \
     fix-permissions "/home/${NB_USER}"
