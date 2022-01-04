@@ -1,0 +1,16 @@
+version: '2.4'
+services:
+    jupyter:
+        build: 
+            context: .
+            dockerfile: ./Dockerfile
+        restart: 'no'
+        volumes:
+            - ./:/home/jovyan/notebooks
+        ports:
+            - "8888:8888"
+        mem_limit: 3g
+        mem_reservation: 3g
+        # environment:
+        #     NB_UID: ${UID}
+        #     NB_GID: ${GID}
